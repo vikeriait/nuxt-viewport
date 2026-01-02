@@ -1,19 +1,21 @@
 import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import { defu } from 'defu'
+import type { ViewportPluginOptions } from '@vikeriait/vue-viewport'
 
-// Module options TypeScript interface definition
-export interface ModuleOptions {}
+export type ModuleOptions = ViewportPluginOptions
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'my-module',
-    configKey: 'myModule',
+    name: 'nuxt-viewport',
+    configKey: 'viewport',
   },
-  // Default configuration options of the Nuxt module
+
   defaults: {},
-  setup(_options, _nuxt) {
+  setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
+    nuxt.options.runtimeConfig.public.viewport = defu(nuxt.options.runtimeConfig.public.viewport, options)
+
     addPlugin(resolver.resolve('./runtime/plugin'))
   },
 })

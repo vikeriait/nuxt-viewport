@@ -1,5 +1,7 @@
-import { defineNuxtPlugin } from '#app'
+import { defineNuxtPlugin, useRuntimeConfig } from '#app'
+import ViewportPlugin from '@vikeriait/vue-viewport'
 
-export default defineNuxtPlugin((_nuxtApp) => {
-  console.log('Plugin injected by my-module!')
+export default defineNuxtPlugin((nuxtApp) => {
+  const config = useRuntimeConfig().public.viewport
+  nuxtApp.vueApp.use(ViewportPlugin, config)
 })
