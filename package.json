@@ -1,6 +1,6 @@
 {
   "name": "@vikeriait/nuxt-viewport",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight, high-performance Vue 3 directive and composable to detect when elements enter the viewport, featuring \"Smart Presets\", automatic margin compensation for smooth reveals, and seamless Tailwind CSS integration.",
   "homepage": "https://nuxt-viewport.vikeria.it",
   "repository": {
