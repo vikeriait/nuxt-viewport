@@ -2,6 +2,7 @@
   "name": "@vikeriait/nuxt-viewport",
   "version": "1.0.0",
   "description": "A lightweight, high-performance Vue 3 directive and composable to detect when elements enter the viewport, featuring \"Smart Presets\", automatic margin compensation for smooth reveals, and seamless Tailwind CSS integration.",
+  "homepage": "https://nuxt-viewport.vikeria.it",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vikeriait/nuxt-viewport"
@@ -34,7 +35,10 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "@nuxt/kit": "^4.2.2",
@@ -52,6 +56,7 @@
     "eslint": "^9.39.2",
     "nuxt": "^4.2.2",
     "typescript": "~5.9.3",
+    "vitepress": "2.0.0-alpha.15",
     "vitest": "^4.0.16",
     "vue-tsc": "^3.2.1"
   }
